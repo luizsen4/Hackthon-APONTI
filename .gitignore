@@ -1,0 +1,18 @@
+# Dependências
+node_modules/
+venv/
+__pycache__/
+
+# Variáveis de ambiente (Segurança)
+.env
+.env.local
+.env.production
+
+# Builds
+dist/
+build/
+.next/
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
