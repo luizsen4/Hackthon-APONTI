@@ -1,4 +1,4 @@
-# 🏆 [EQUIPE 01] - Hackathon APONTI Academy 2026 · RAIZ
+# 🏆 [EQUIPE RAIZ] - Hackathon APONTI Academy 2026 
 
 > **Desafio:** Antena na Lama (REC'n'Play 2026)
 > **Caminho escolhido:** Alertar e proteger
@@ -14,12 +14,12 @@ Limites assumidos: o app **não** prevê desastre, não emite alerta oficial, n�
 
 ## 👥 Equipe
 *   **Desenvolvedores:**
-    *   [Nome 1] - [Trilha]
-    *   [Nome 2] - [Trilha]
-    *   [Nome 3] - [Trilha]
-    *   [Nome 4] - [Trilha]
-*   **Validador(a) (Movimento Pró-Criança):**
-    *   [Nome do Validador]
+    *   [Emerson Júnior] - [Back-End]
+    *   [Matheus Alves] - [Front-End]
+    *   [Lytuanne Buarque] - [Dados]
+    *   [Luiz Martins ] - [Devops]
+*   **Validadora (Movimento Pró-Criança):**
+    *   [Tayza Kevinlyn ]
 
 ## 🚀 Tecnologias Utilizadas
 *   **Front-end:** Next.js 14 (App Router) + React 18 + TypeScript, Tailwind CSS (utilitários) + design system RAIZ (tokens CSS), Web Speech API (voz e ditado), PWA mobile-first
@@ -75,7 +75,7 @@ Demonstração rápida (sem Supabase): entre como liderança em **“Usar conta 
 Crie um projeto no Supabase, rode `supabase/migrations/0001_raiz.sql` no SQL Editor, ative *Anonymous sign-ins* e preencha `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
 
 ## 🌐 Deploy Público
-Link do Front-end: [Cole o link da Vercel]
+Link do Front-end: http://frontend-alpha-lac-21.vercel.app/
 
 Link da API (Back-end): [Cole o link do Render]
 
