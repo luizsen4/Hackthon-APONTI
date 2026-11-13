@@ -23,7 +23,7 @@
 
 ---
 
-> **[EQUIPE 01] · Hackathon APONTI Academy 2026**
+> **[EQUIPE 01] · Hackathon APONTI Academy 2026**<br>
 > **Desafio:** Antena na Lama (REC'n'Play 2026) · **Caminho escolhido:** Alertar e proteger
 
 ## Sumário
