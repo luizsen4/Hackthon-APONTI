@@ -16,3 +16,6 @@ build/
 # Sistema Operacional
 .DS_Store
 Thumbs.db
+# Next.js / TypeScript
+next-env.d.ts
+*.tsbuildinfo
