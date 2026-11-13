@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import type { Express } from 'express';
 import { criarApp } from './criar-app.js';
 import { modeloAnthropic } from './ia/modelo.js';
 
@@ -8,7 +9,7 @@ import { modeloAnthropic } from './ia/modelo.js';
 const modelo = modeloAnthropic(process.env.ANTHROPIC_API_KEY, process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5');
 const origens = (process.env.CORS_ORIGIN || 'http://localhost:3000').split(',').map((s) => s.trim()).filter(Boolean);
 
-const app = criarApp({ obterModelo: () => modelo, origens });
+const app: Express = criarApp({ obterModelo: () => modelo, origens });
 export default app;
 
 if (!process.env.VERCEL) {
