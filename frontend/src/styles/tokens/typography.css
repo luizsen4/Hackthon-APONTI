@@ -1,0 +1,22 @@
+/* Três escalas de base escolhidas pela pessoa: 18 (normal), 22 e 26 (grande).
+   Nunca menos de 13 px. Títulos 800, corpo 400–600. */
+:root{
+  --font-sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-base:18px;
+}
+/* derivados redeclarados onde a escala muda, para recalcular */
+:root,[data-escala]{
+  --fs-note:max(13px,calc(var(--font-base) * .75));
+  --fs-small:max(13px,calc(var(--font-base) * .875));
+  --fs-body:var(--font-base);
+  --fs-lead:calc(var(--font-base) * 1.125);
+  --fs-title-sm:calc(var(--font-base) * 1.25);
+  --fs-title:calc(var(--font-base) * 1.5);
+  --fs-display:calc(var(--font-base) * 2);
+  --fs-number:calc(var(--font-base) * 2.25);
+  --fw-body:400;/* @kind font */--fw-medium:500;/* @kind font */--fw-strong:600;/* @kind font */--fw-bold:700;/* @kind font */--fw-title:800;/* @kind font */
+  --lh-tight:1.15;/* @kind font */--lh-title:1.2;/* @kind font */--lh-body:1.45;/* @kind font */
+  --ls-title:-0.02em;/* @kind font */--ls-display:-0.03em;/* @kind font */--ls-caps:0.06em;/* @kind font */
+}
+[data-escala="22"]{--font-base:22px}
+[data-escala="26"]{--font-base:26px}

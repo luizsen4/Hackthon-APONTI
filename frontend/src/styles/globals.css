@@ -1,0 +1,11 @@
+/* Design system RAIZ (tokens + componentes) e estilos das telas.
+   Tailwind entra só com utilitários (sem preflight) para não brigar com o design system. */
+@import './tokens/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/base.css';
+@import './components/components.css';
+@import './raiz.css';
+
+@tailwind utilities;

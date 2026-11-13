@@ -1,0 +1,112 @@
+/* RAIZ — cores. Tema claro é o padrão (:root). Escuro e alto contraste por data-theme.
+   Regra: cor nunca sozinha — sempre com texto ou ícone. Vermelho só para emergência. */
+:root{
+  /* base: neutros */
+  --gray-0:#FFFFFF;--gray-50:#F6F6F4;--gray-100:#EDEDEB;--gray-200:#E4E4E1;--gray-300:#D4D4D0;--gray-500:#858581;--gray-600:#6B6B6B;--gray-700:#575757;--gray-800:#2A2A2A;--gray-900:#1E1E1E;--gray-950:#141414;
+  /* base: matizes (claro) */
+  --blue-100:#E3EAFC;--blue-600:#1D4ED8;--blue-700:#1A3FA8;
+  --orange-100:#FDE7D2;--orange-500:#E36C0A;--orange-800:#8F3F00;
+  --red-100:#FBE3E3;--red-600:#A50F15;--red-700:#820B10;
+  --green-100:#DCF0E2;--green-600:#2E8A4A;--green-800:#1B6B35;
+  --purple-100:#ECE5F7;--purple-700:#5B3B9A;
+  /* Okabe-Ito (seguro para daltonismo). Ver guidelines/colors-colorblind.html */
+  --oi-orange:#E69F00;--oi-sky:#56B4E9;--oi-teal:#009E73;--oi-yellow:#F0E442;--oi-blue:#0072B2;--oi-vermilion:#D55E00;--oi-pink:#CC79A7;
+  --status-blue-100:#DCEBF5;--status-blue-800:#005A8C;
+  --status-verm-100:#FBE4D4;--status-verm-800:#9C3F00;
+  --status-amber-100:#FCEFD2;--status-amber-800:#704C00;
+
+  /* semântico: superfícies */
+  --bg-page:var(--gray-100);
+  --surface-card:var(--gray-0);
+  --surface-sunken:var(--gray-50);
+  --surface-inverse:var(--gray-950);
+  /* semântico: texto */
+  --text-strong:var(--gray-950);
+  --text-body:var(--gray-950);
+  --text-muted:var(--gray-700);
+  --text-subtle:var(--gray-600);
+  --text-inverse:var(--gray-0);
+  --text-link:var(--blue-600);
+  /* bordas */
+  --border-soft:var(--gray-300);
+  --border-strong:var(--gray-500);
+  --border-focus:var(--blue-600);
+  /* ação */
+  --action-primary-bg:var(--gray-950);
+  --action-primary-bg-hover:#333333;
+  --action-primary-fg:var(--gray-0);
+  --action-neutral-bg:var(--gray-200);
+  --action-neutral-bg-hover:var(--gray-300);
+  --action-neutral-fg:var(--gray-950);
+  --action-selected-bg:var(--blue-100);
+  --action-selected-border:var(--blue-600);
+  /* significado */
+  --sign-seen-bg:var(--orange-100);   /* laranja = sinal visto */
+  --sign-seen-fg:var(--orange-800);
+  --sign-seen-icon:var(--orange-500);
+  --emergency-bg:var(--red-600);      /* vermelho = ligue agora. Só emergência. */
+  --emergency-bg-hover:var(--red-700);
+  --emergency-fg:var(--gray-0);
+  --emergency-tint:var(--red-100);
+  --emergency-text:var(--red-600);
+  --status-pending-bg:var(--gray-200);--status-pending-fg:var(--gray-700);
+  /* status: nunca vermelho × verde. Visitado = azul ✓, Defesa Civil = vermelhão ⚠, Não encontrado = âmbar ? */
+  --status-visited-bg:var(--status-blue-100);--status-visited-fg:var(--status-blue-800);
+  --status-civil-bg:var(--status-verm-100);--status-civil-fg:var(--status-verm-800);
+  --status-notfound-bg:var(--status-amber-100);--status-notfound-fg:var(--status-amber-800);
+  /* níveis do mapa de risco (convenção Defesa Civil, claridades distintas + padrão + rótulo) */
+  --risk-4:#A50F15;--risk-4-ink:#FFFFFF;
+  --risk-3:var(--oi-vermilion);--risk-3-ink:#000000;
+  --risk-2:var(--oi-yellow);--risk-2-ink:#000000;
+  --risk-1:var(--oi-teal);--risk-1-ink:#000000;
+  --risk-4-pattern:repeating-linear-gradient(45deg,rgba(255,255,255,.32) 0 1px,transparent 1px 6px),repeating-linear-gradient(-45deg,rgba(255,255,255,.32) 0 1px,transparent 1px 6px);/* @kind other */
+  --risk-3-pattern:repeating-linear-gradient(45deg,rgba(0,0,0,.22) 0 1px,transparent 1px 6px);/* @kind other */
+  --risk-2-pattern:radial-gradient(rgba(0,0,0,.28) .8px,transparent 1px) 0 0/5px 5px;/* @kind other */
+  --risk-1-pattern:none;/* @kind other */
+  --info-bg:var(--blue-100);--info-fg:var(--blue-700);
+  --demo-bg:#FFF4C2;--demo-fg:#5C4A00;--demo-border:#C9A400;
+  /* superfície suave (aurora) — só em cabeçalhos de cartão de resultado e questionário */
+  --aurora-calm:linear-gradient(135deg,#E6ECFB 0%,#EFE7F8 55%,#F7EEE6 100%);/* @kind color */
+  --aurora-seen:linear-gradient(135deg,#FDE7D2 0%,#FBEFE3 60%,#F6F1EA 100%);/* @kind color */
+  --icon-default:var(--gray-950);
+  --overlay:rgba(20,20,20,.55);
+}
+
+[data-theme="escuro"]{
+  --bg-page:#121212;--surface-card:#1E1E1E;--surface-sunken:#181818;--surface-inverse:#F2F2F0;
+  --text-strong:#F2F2F0;--text-body:#F2F2F0;--text-muted:#BDBDB8;--text-subtle:#9C9C97;--text-inverse:#121212;--text-link:#8AB4FF;
+  --border-soft:#3A3A3A;--border-strong:#7A7A76;--border-focus:#8AB4FF;
+  --action-primary-bg:#F2F2F0;--action-primary-bg-hover:#D9D9D5;--action-primary-fg:#121212;
+  --action-neutral-bg:#2E2E2C;--action-neutral-bg-hover:#3A3A38;--action-neutral-fg:#F2F2F0;
+  --action-selected-bg:#1B2A4D;--action-selected-border:#8AB4FF;
+  --sign-seen-bg:#3A2414;--sign-seen-fg:#FFB680;--sign-seen-icon:#F08A3C;
+  --emergency-bg:#B0141B;--emergency-bg-hover:#920F15;--emergency-fg:#FFFFFF;--emergency-tint:#3B1715;--emergency-text:#FF9B92;
+  --status-pending-bg:#2E2E2C;--status-pending-fg:#D0D0CC;
+  --status-visited-bg:#0F2A3D;--status-visited-fg:#8CCBF2;
+  --status-civil-bg:#3A1E0E;--status-civil-fg:#FFA36B;
+  --status-notfound-bg:#3A2C0A;--status-notfound-fg:#F5C760;
+  --info-bg:#1B2A4D;--info-fg:#A9C6FF;
+  --demo-bg:#3A3210;--demo-fg:#FFE27A;--demo-border:#8C7A20;
+  --aurora-calm:linear-gradient(135deg,#1F2740 0%,#2A2238 55%,#2E261F 100%);/* @kind color */
+  --aurora-seen:linear-gradient(135deg,#3A2414 0%,#2E2219 60%,#262220 100%);/* @kind color */
+  --icon-default:#F2F2F0;--overlay:rgba(0,0,0,.7);
+}
+
+[data-theme="contraste"]{
+  --bg-page:#FFFFFF;--surface-card:#FFFFFF;--surface-sunken:#FFFFFF;--surface-inverse:#000000;
+  --text-strong:#000000;--text-body:#000000;--text-muted:#000000;--text-subtle:#000000;--text-inverse:#FFFFFF;--text-link:#000000;
+  --border-soft:#000000;--border-strong:#000000;--border-focus:#000000;
+  --action-primary-bg:#000000;--action-primary-bg-hover:#000000;--action-primary-fg:#FFFFFF;
+  --action-neutral-bg:#FFFFFF;--action-neutral-bg-hover:#FFFFFF;--action-neutral-fg:#000000;
+  --action-selected-bg:#FFFFFF;--action-selected-border:#000000;
+  --sign-seen-bg:#FFFFFF;--sign-seen-fg:#000000;--sign-seen-icon:#000000;
+  --emergency-bg:#000000;--emergency-bg-hover:#000000;--emergency-fg:#FFFFFF;--emergency-tint:#FFFFFF;--emergency-text:#000000;
+  --status-pending-bg:#FFFFFF;--status-pending-fg:#000000;
+  --status-visited-bg:#FFFFFF;--status-visited-fg:#000000;
+  --status-civil-bg:#FFFFFF;--status-civil-fg:#000000;
+  --status-notfound-bg:#FFFFFF;--status-notfound-fg:#000000;
+  --info-bg:#FFFFFF;--info-fg:#000000;
+  --demo-bg:#FFFFFF;--demo-fg:#000000;--demo-border:#000000;
+  --aurora-calm:#FFFFFF;/* @kind color */--aurora-seen:#FFFFFF;/* @kind color */
+  --icon-default:#000000;--overlay:rgba(0,0,0,.8);
+}
