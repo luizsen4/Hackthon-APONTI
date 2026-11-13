@@ -1,6 +1,6 @@
 import request from 'supertest';
 import { describe, expect, it, vi } from 'vitest';
-import { criarApp } from '../src/app.js';
+import { criarApp } from '../src/criar-app.js';
 import type { Modelo } from '../src/ia/modelo.js';
 
 function app(resposta: unknown, espiao?: (prompt: string) => void) {
@@ -65,5 +65,17 @@ describe('IA desligada', () => {
     expect(r.status).toBe(503);
     const s = await request(criarApp({ obterModelo: () => null })).get('/api/saude');
     expect(s.body).toEqual({ ok: true, ia: false });
+  });
+});
+
+describe('segurança', () => {
+  it('envia cabeçalhos de segurança e limita requisições por IP', async () => {
+    const a = criarApp({ obterModelo: () => null, limitePorMinuto: 2 });
+    const s = await request(a).get('/api/saude');
+    expect(s.headers['x-content-type-options']).toBe('nosniff');
+    await request(a).post('/api/ia/aviso').send({ texto: 'abc' });
+    await request(a).post('/api/ia/aviso').send({ texto: 'abc' });
+    const r = await request(a).post('/api/ia/aviso').send({ texto: 'abc' });
+    expect(r.status).toBe(429);
   });
 });
